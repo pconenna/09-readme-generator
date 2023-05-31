@@ -18,17 +18,22 @@ function writeToFile(fileName, data) {
 `# ${data.title}
 ## Description
 ${data.desc}
+
 ## Table of contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [How to Contribute](#How to Contribute)
+- [How to Contribute](#contribute)
 - [Testing](#testing)
+
 ## Installation
 ${data.installation}
+
 ## Usage
 ${data.usage}
-## How to contribute
+
+## Contribute
 ${data.contribution}
+
 ## Testing
 ${data.testing}`
     ,function(err){

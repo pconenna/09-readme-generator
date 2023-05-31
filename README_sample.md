@@ -1,16 +1,21 @@
-# test app 3
+# test app 4
 ## Description
-test of all prompts
+test again cos i keep breaking it
+
 ## Table of contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [How to Contribute](#How to Contribute)
+- [How to Contribute](#contribute)
 - [Testing](#testing)
+
 ## Installation
-clone the repo
+clone code
+
 ## Usage
-answer each prompt and press enter
-## How to contribute
-clone the dev branch and commit to it and make prs
+answer the prompts
+
+## Contribute
+u cant
+
 ## Testing
 run node index.js
