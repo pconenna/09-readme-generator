@@ -6,7 +6,6 @@ const inquirer = require("inquirer");
 // test instructions 
 const questions = ["What is the title of the application?",
 "What is the description of the application?",
-"Write a table of contents.",
 "How does a user install the appllication?",
 "How does a user use the application?",
 "What are the contribution guidlines?",
@@ -18,7 +17,20 @@ function writeToFile(fileName, data) {
     fs.writeFile(fileName,
 `# ${data.title}
 ## Description
-${data.desc}`
+${data.desc}
+## Table of contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [How to Contribute](#How to Contribute)
+- [Testing](#testing)
+## Installation
+${data.installation}
+## Usage
+${data.usage}
+## How to contribute
+${data.contribution}
+## Testing
+${data.testing}`
     ,function(err){
         if(err) throw err;
     })
@@ -40,26 +52,21 @@ function init() {
         {
             type:'input',
             message:questions[2],
-            name: 'contents'
-        },
-        {
-            type:'input',
-            message:questions[3],
             name: 'installation'
         },
         {
             type:'input',
-            message:questions[4],
+            message:questions[3],
             name: 'usage'
         },
         {
             type:'input',
-            message:questions[5],
+            message:questions[4],
             name: 'contribution'
         },
         {
             type:'input',
-            message:questions[6],
+            message:questions[5],
             name: 'testing'
         }
     ]).then((resposnse)=>{
