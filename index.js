@@ -14,7 +14,15 @@ const questions = ["What is the title of the application?",
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName,
+`# ${data.title}
+## Description
+${data.desc}`
+    ,function(err){
+        if(err) throw err;
+    })
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -23,9 +31,40 @@ function init() {
             type:'input',
             message:questions[0],
             name: 'title'
-
         },
-    ])
+        {
+            type:'input',
+            message:questions[1],
+            name: 'desc'
+        },
+        {
+            type:'input',
+            message:questions[2],
+            name: 'contents'
+        },
+        {
+            type:'input',
+            message:questions[3],
+            name: 'installation'
+        },
+        {
+            type:'input',
+            message:questions[4],
+            name: 'usage'
+        },
+        {
+            type:'input',
+            message:questions[5],
+            name: 'contribution'
+        },
+        {
+            type:'input',
+            message:questions[6],
+            name: 'testing'
+        }
+    ]).then((resposnse)=>{
+        writeToFile("README_sample.md",resposnse);
+    });
 }
 
 // Function call to initialize app
