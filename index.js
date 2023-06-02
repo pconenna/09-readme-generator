@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown.js")
+const gm = require("./utils/generateMarkdown.js")
 // TODO: Create an array of questions for user input
 //project title, description, table of contents, installation, usage, contribution guidelines
 // test instructions 
@@ -54,8 +54,7 @@ function init() {
             name: 'license'
         }
     ]).then((resposnse)=>{
-        renderLicesnce 
-        writeToFile("README_sample.md",generateMarkdown(resposnse));
+        writeToFile("README_sample.md",gm(resposnse));
     });
 }
 
