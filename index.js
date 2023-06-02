@@ -1,42 +1,15 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown.js")
 // TODO: Create an array of questions for user input
 //project title, description, table of contents, installation, usage, contribution guidelines
 // test instructions 
-const questions = ["What is the title of the application?",
-"What is the description of the application?",
-"How does a user install the appllication?",
-"How does a user use the application?",
-"What are the contribution guidlines?",
-"Write test instructions."
-];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName,
-`# ${data.title}
-## Description
-${data.desc}
-
-## Table of contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [How to Contribute](#contribute)
-- [Testing](#testing)
-
-## Installation
-${data.installation}
-
-## Usage
-${data.usage}
-
-## Contribute
-${data.contribution}
-
-## Testing
-${data.testing}`
-    ,function(err){
+    //this is going to need imports from generate markdown
+    fs.writeFile(fileName,data,function(err){
         if(err) throw err;
     })
 }
@@ -46,38 +19,47 @@ function init() {
     inquirer.prompt([
         {
             type:'input',
-            message:questions[0],
+            message:"What is the title of the application?",
             name: 'title'
         },
         {
             type:'input',
-            message:questions[1],
+            message:"What is the description of the application?",
             name: 'desc'
         },
         {
             type:'input',
-            message:questions[2],
+            message:"How does a user install the appllication?",
             name: 'installation'
         },
         {
             type:'input',
-            message:questions[3],
+            message:"How does a user use the application?",
             name: 'usage'
         },
         {
             type:'input',
-            message:questions[4],
+            message:"What are the contribution guidlines?",
             name: 'contribution'
         },
         {
             type:'input',
-            message:questions[5],
+            message:"Write test instructions.",
             name: 'testing'
+        },
+        {
+            type: 'checkbox',
+            message: 'Choose a license.',
+            choices: ["Apache 2.0","Boost Software License 1.0","MIT License","Mozilla Public License 2.0"],
+            name: 'license'
         }
     ]).then((resposnse)=>{
-        writeToFile("README_sample.md",resposnse);
+        renderLicesnce 
+        writeToFile("README_sample.md",generateMarkdown(resposnse));
     });
 }
 
 // Function call to initialize app
 init();
+
+
