@@ -52,6 +52,16 @@ function init() {
             message: 'Choose a license.',
             choices: ["Apache 2.0","Boost Software License 1.0","MIT License","Mozilla Public License 2.0"],
             name: 'license'
+        },
+        {
+            type:'input',
+            message:"Enter your GitHub username.",
+            name: 'github'
+        },
+        {
+            type:'input',
+            message:"Enter your email address.",
+            name: 'email'
         }
     ]).then((resposnse)=>{
         writeToFile("README_sample.md",gm(resposnse));

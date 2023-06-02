@@ -1,6 +1,8 @@
-# test
+# test app
+  [![License](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+
   ## Description
-  test
+  test the code
 
   ## Table of contents
   - [Installation](#installation)
@@ -9,17 +11,21 @@
   - [Testing](#testing)
 
   ## Installation
-  test
+  clone code
 
   ## Usage
-  test
+  run node index.js
 
   ## Contribute
-  test
+  use the dev branch
 
   ## Testing
-  test
+  run it
   
-  [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+  ## Questions
+  Contact me if you have additional questions.
+  Github: https://github.com/pconenna
+  
+  Email: peterconenna13@gmail.com
 
 
